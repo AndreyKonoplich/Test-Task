@@ -2,4 +2,4 @@
 Получился более менее адекватный адаптив без медиа-запросов.
 Кроссбраузерность учтена.<br>
 Проект можно спокойно развернуть через гит клон в любом редакторе кода. Никаких зависимотей я не добавлял.<br>
-Залил проект на Github Pages для удобства: <a href= "https://andreykonoplich.github.io/Test-Task/" target = "blank">Ссылка на сайт
+Залил проект на Github Pages для удобства: <a href= "https://andreykonoplich.github.io/Test-Task/" target = "_blank">Ссылка на сайт
