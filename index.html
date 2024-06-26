@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test task</title>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <body>
+        <header class="header">
+            <h1>Курсы валют НБ РБ</h1>
+        </header>
+        
+        <main>
+            <div class="wrapper">
+                <div class="currencyByDate" data-target="screen1">
+                    <h2>Курс валют за день</h2>
+                    <hr class="solidLine">
+                    <p>Получение данных по валютам за определенный день</p>
+                </div>
+                <div class="dynamicCurrency" data-target="screen2">
+                    <h2>Динамика курса</h2>
+                    <hr class="solidLine">
+                    <p>Отображение курса любой валюты в динамике</p>
+                </div>
+                <div class="converter" data-target="screen3">
+                    <h2>Конвертер валют</h2>
+                    <hr class="solidLine">
+                    <p>Возможность конвертировать различные валюты</p>
+                </div>
+            </div>
+
+            <div class="newScreen" id="screen1">
+                <h2>Курс валют за день</h2>
+                <form id="currencyByDateForm">
+                    <label for="dateInput"><span class="dateSpan">Выберите дату:</span></label>
+                    <input type="date" id="dateInput" class="dateInput" name="dateInput" required>
+                    <br>
+                    <button class="button" type="submit">Получить данные</button>
+                    <button id="shareButton1" >Поделиться</button>
+                    <div id="snackbar">Ссылка скопирована в буфер обмена</div>
+                </form>
+                <div id="res" class="currency-list"></div>
+            </div>
+            
+            <div class="newScreen" id="screen2">
+                <h2>Динамика курса</h2>
+                <form id="dynamicCurrencyForm">
+                    <label for="startDateInput"><span class="dateSpan">Дата с:</span></label>
+                    <input type="date" class="dateInput" id="startDateInput" name="startDateInput" required>
+                    <label for="endDateInput"><span class="dateSpan">Дата по:</span></label>
+                    <input type="date" class="dateInput" id="endDateInput" name="endDateInput" required>
+                    <br>
+                    <label id= "selectLabel" for="currencySelect"><span class="selectLabel">Выберите валюту:</span></label>
+                    <select id="currencySelect" name="currencySelect" required></select>
+                    <br>
+                    <button class="button" type="submit">Получить данные</button>
+                    <button id="shareButton2">Поделиться</button>
+                    <div id="snackbar">Ссылка скопирована в буфер обмена</div>
+                </form>
+                <div id="res2" class="currency-date-grid"></div>
+            </div>
+            
+
+            <div class="newScreen" id="screen3">
+                <h2>Конвертер валют</h2>
+                <form id="currencyConverterForm">
+                    <label for="currencyFrom"><span class="selectLabel">Валюта А:</span></label>
+                    <select id="currencyFrom" name="currencyFrom" required></select>
+                    <br>
+                    <label for="currencyTo"><span class="selectLabel">Валюта Б:</span></label>
+                    <select id="currencyTo" name="currencyTo" required></select>
+                    <br>
+                    <label for="amount"><span class="selectLabel">Сумма:</span></label>
+                    <input type="number" id="amount" name="amount" min="0" step="0.1" required>
+                </form>
+                <div id="conversionResult"></div>
+                <button id="shareButton3">Поделиться</button>
+                <div id="snackbar">Ссылка скопирована в буфер обмена</div>
+            </div>
+            <footer id="browserInfoFooter">
+                <div class="browser-info"></div>
+            </footer>
+        </main>
+
+        <script src="scripts/currency_script.js"></script>
+        <script src="/scripts/script.js"></script>
+</body>
+</html>

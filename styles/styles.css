@@ -1,0 +1,296 @@
+body{
+    margin: 0 0;
+    min-height: 100vh;
+    background: rgb(240,255,235);
+    background: linear-gradient(0deg, rgba(240,255,235,0.6587885154061625) 10%, rgba(223,255,201,1) 100%);
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    text-align: center;
+    background-color: rgba(79, 168, 79, 0.856);
+    padding-block: 15px;
+    color: white;
+    width: 80%;
+    border-radius: 15px;
+    
+}
+
+
+h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+   
+    letter-spacing: 1px;
+}
+
+.solidLine{
+    border: none;
+    height: 1.5px;
+    background-color: #000000;
+}
+
+.wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.currencyByDate, 
+.dynamicCurrency, 
+.converter{
+    width: 20%;
+    height: 30%;
+    border-radius: 15px;
+    border: solid;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.currencyByDate:hover,
+.dynamicCurrency:hover,
+.converter:hover {
+    transform: scale(1.2);
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+}
+
+.hiddenOut {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.newScreen {
+    display: none;
+    margin-top: 100px;
+    text-align: center;
+    position: relative;
+}
+
+.newScreen.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.currency-list {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.currency-item {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    list-style-type: none;
+}
+
+.currency-name {
+    font-weight: bold;
+}
+
+.currency-rate {
+    margin-left: 10px;
+    color: #159c37;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+#browserInfoFooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f187;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -1px 5px rgba(17, 14, 14, 0);
+}
+
+.browser-info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+.button, #shareButton{
+    background-color: #6cf18dbe;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 1px solid black;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.button:hover,
+#shareButton:hover {
+    background-color: #3c8e51be;
+}
+
+#currencySelect{
+    margin-top: 20px;
+    text-align: center;
+    width: 15%;
+    background-color: rgba(255, 255, 255, 0.277);
+    padding-block: 5px;
+    border-radius: 3px;
+}
+
+.selectLabel{
+    font-size: 18px;
+}
+
+#currencyTo{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 20%;
+    background-color: #9febb152;
+    border-radius: 3px;
+}
+#currencyFrom{
+    border-radius: 3px;
+    text-align: center;
+    width: 20%;
+    background-color: #9febb152;
+}
+
+#amount{
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #9febb152;
+    border-radius: 3px;
+}
+
+.dateInput{
+    background-color: rgba(255, 255, 255, 0.277);
+    border: 1px solid black;
+    font-size: 16px;
+}
+.dateSpan{
+    font-size: 18px;
+}
+
+.currency-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+}
+
+.currency-date-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    margin-block: 50px;
+    margin-inline: 30%;
+}
+
+.currency-grid-item {
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    list-style-type: none;
+}
+
+.currency-name {
+    font-weight: bold;
+}
+
+.currency-rate {
+    margin-left: 10px;
+    color: #159c37;
+}
+
+#shareButton1, #shareButton2, #shareButton3{
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-left: 20px;
+    background-color: #57c975;
+    cursor: pointer;
+}
+#shareButton1:hover,
+#shareButton2:hover,
+#shareButton3:hover{
+    background-color: #159c37;
+}
+
+#shareButton3{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
